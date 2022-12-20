@@ -11,4 +11,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Otzzei.MetchJob.Domain\Otzzei.MetchJob.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
