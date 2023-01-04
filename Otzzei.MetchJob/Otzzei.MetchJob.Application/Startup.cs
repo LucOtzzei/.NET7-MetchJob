@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Otzzei.MetchJob.Infrastructure.Context;
 
 namespace Otzzei.MetchJob.Application
