@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Otzzei.MetchJob.Domain.Interfaces.IRepository;
 using Otzzei.MetchJob.Domain.Interfaces.IService;
 using Otzzei.MetchJob.Domain.Services;
 using Otzzei.MetchJob.Infrastructure.Context;
+using Otzzei.MetchJob.Infrastructure.Repositories;
 
 namespace Otzzei.MetchJob.Application
 {
@@ -29,6 +31,9 @@ namespace Otzzei.MetchJob.Application
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IJobOpportunityRepository, JobOpportunityRepository>();
             services.AddMvc(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;

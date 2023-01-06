@@ -10,5 +10,6 @@ namespace Otzzei.MetchJob.Infrastructure.Context
         public MetchJobContext(DbContextOptions<MetchJobContext> opts) : base(opts) { }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<JobOpportunity> JobOpportunities { get; set; }
     }
 }
