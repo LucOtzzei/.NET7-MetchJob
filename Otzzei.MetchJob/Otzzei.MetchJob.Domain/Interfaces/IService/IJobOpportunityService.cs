@@ -4,6 +4,6 @@ namespace Otzzei.MetchJob.Domain.Interfaces.IService
 {
     public interface IJobOpportunityService
     {
-        Task<Guid> CreateJobOpportunityAsync(Guid managerJobId, JobOpportunityRequest request);
+        Task<Guid> CreateJobOpportunityAsync(Guid jobAdminId, JobOpportunityRequest request);
     }
 }
