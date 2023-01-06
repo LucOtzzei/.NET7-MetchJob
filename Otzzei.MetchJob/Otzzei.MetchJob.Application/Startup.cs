@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Otzzei.MetchJob.Domain.Interfaces.IService;
+using Otzzei.MetchJob.Domain.Services;
 using Otzzei.MetchJob.Infrastructure.Context;
 
 namespace Otzzei.MetchJob.Application
@@ -26,6 +28,7 @@ namespace Otzzei.MetchJob.Application
                 .AddEntityFrameworkStores<MetchJobContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddScoped<IUserService, UserService>();
             services.AddMvc(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;
