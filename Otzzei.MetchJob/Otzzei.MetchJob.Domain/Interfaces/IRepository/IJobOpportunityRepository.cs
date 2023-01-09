@@ -6,5 +6,6 @@ namespace Otzzei.MetchJob.Domain.Interfaces.IRepository
     {
         Task CreateJobOpportunityAsync(JobOpportunity job);
         Task UpdateJobOpportunityAsync(JobOpportunity job);
+        Task<JobOpportunity> GetJobOpportunityAsync(Guid jobOpportunityId);
     }
 }

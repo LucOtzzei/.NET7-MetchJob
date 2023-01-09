@@ -1,4 +1,5 @@
-﻿using Otzzei.MetchJob.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Otzzei.MetchJob.Domain.Entities;
 using Otzzei.MetchJob.Domain.Interfaces.IRepository;
 using Otzzei.MetchJob.Infrastructure.Context;
 
@@ -16,6 +17,10 @@ namespace Otzzei.MetchJob.Infrastructure.Repositories
         {
             await _context.JobOpportunities.AddAsync(job);
             await _context.SaveChangesAsync();
+        }
+        public async Task<JobOpportunity> GetJobOpportunityAsync(Guid? jobOpportunityId)
+        {
+            return await _context.JobOpportunities.FirstOrDefaultAsync(x => x.Id == jobOpportunityId);
         }
         public async Task UpdateJobOpportunityAsync(JobOpportunity job)
         {

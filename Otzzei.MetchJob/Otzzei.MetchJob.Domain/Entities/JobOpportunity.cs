@@ -9,6 +9,7 @@ namespace Otzzei.MetchJob.Domain.Entities
         {
             Id = Guid.NewGuid();
             ManagerJobId = managerJobId;
+            CompanyName = request.CompanyName;
             JobTitle = request.JobTitle;
             SalaryCurrency = request.SalaryCurrency;
             MinimumWageAtWork = request.MinimumWageAtWork;
@@ -18,11 +19,23 @@ namespace Otzzei.MetchJob.Domain.Entities
         }
         public Guid Id { get; set; }
         public Guid ManagerJobId { get; set; }
+        public string CompanyName { get; set; }
         public string JobTitle { get; set; }
         public CurrencyEnum SalaryCurrency { get; set; }
         public double MinimumWageAtWork { get; set; }
         public double MaximumWageAtWork { get; set; }
         public string JobsDescription { get; set; }
         public string JobActivities { get; set; }
+
+        public void Update(JobOpportunityRequest request)
+        {
+            CompanyName = request.CompanyName;
+            JobTitle = request.JobTitle;
+            SalaryCurrency = request.SalaryCurrency;
+            MinimumWageAtWork = request.MinimumWageAtWork;
+            MaximumWageAtWork = request.MaximumWageAtWork;
+            JobsDescription = request.JobsDescription;
+            JobActivities = request.JobActivities;
+        }
     }
 }

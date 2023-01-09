@@ -25,5 +25,11 @@ namespace Otzzei.MetchJob.Application.Controllers
             var response = await _jobOpportunityService.UpdateJobOpportunityAsync(jobOpportunityId, request);
             return Ok(response);
         }
+        [HttpGet("{jobOpportunityId}")]
+        public async Task<IActionResult> GetJobOpportunityAsync([FromRoute] Guid jobOpportunityId)
+        {
+            var response = await _jobOpportunityService.GetJobOpportunityAsync(jobOpportunityId);
+            return Ok(response);
+        }
     }
 }

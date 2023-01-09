@@ -8,6 +8,8 @@ namespace Otzzei.MetchJob.Domain.Requests
         [Required]
         public string JobTitle { get; set; }
         [Required]
+        public string CompanyName { get; set; }
+        [Required]
         public CurrencyEnum SalaryCurrency { get; set; }
         [Required]
         public double MinimumWageAtWork { get; set; }
