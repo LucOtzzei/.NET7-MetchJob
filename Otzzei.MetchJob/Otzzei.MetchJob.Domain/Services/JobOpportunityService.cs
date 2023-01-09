@@ -19,5 +19,14 @@ namespace Otzzei.MetchJob.Domain.Services
 
             return job.Id;
         }
+        public async Task<Guid> UpdateJobOpportunityAsync(Guid jobOpportunituId, JobOpportunityRequest request)
+        {
+            var job = await _jobOpportunityRepository.GetJobOpportunityAsync(jobOpportunituId);
+            job.Update(request);
+
+            await _jobOpportunityRepository.UpdateJobOpportunityAsync(job);
+
+            return job.Id;
+        }
     }
 }
