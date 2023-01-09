@@ -37,5 +37,11 @@ namespace Otzzei.MetchJob.Application.Controllers
             var response = await _jobOpportunityService.GetAllJobOpportunitiesAsync();
             return Ok(response);
         }
+        [HttpDelete("{jobOpportunityId")]
+        public async Task<IActionResult> DeleteJobOpportunityAsync([FromRoute] Guid jobOpportunityId)
+        {
+            var response = await _jobOpportunityService.DeleteJobOpportunityAsync(jobOpportunityId);
+            return Ok(response);
+        }
     }
 }

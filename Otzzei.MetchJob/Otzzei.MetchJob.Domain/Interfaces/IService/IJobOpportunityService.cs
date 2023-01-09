@@ -8,5 +8,6 @@ namespace Otzzei.MetchJob.Domain.Interfaces.IService
         Task<Guid> UpdateJobOpportunityAsync(Guid jobOpportunituId, JobOpportunityRequest request);
         Task<JobOpportunityResponse> GetJobOpportunityAsync(Guid jobOpportunityId);
         Task<List<JobOpportunityResponse>> GetAllJobOpportunitiesAsync();
+        Task<Guid> DeleteJobOpportunityAsync(Guid jobOpportunityId);
     }
 }

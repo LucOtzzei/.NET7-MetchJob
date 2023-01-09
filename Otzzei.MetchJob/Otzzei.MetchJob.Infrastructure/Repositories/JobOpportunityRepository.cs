@@ -19,6 +19,12 @@ namespace Otzzei.MetchJob.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task DeleteJobOpportunityAsync(JobOpportunity job)
+        {
+            _context.JobOpportunities.Remove(job);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<List<JobOpportunity>> GetAllJobOpportunitiesAsync()
         {
             return await _context.JobOpportunities.ToListAsync();

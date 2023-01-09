@@ -40,5 +40,12 @@ namespace Otzzei.MetchJob.Domain.Services
 
             return job.Id;
         }
+
+        public async Task<Guid> DeleteJobOpportunityAsync(Guid jobOpportunityId)
+        {
+            var job = await _jobOpportunityRepository.GetJobOpportunityAsync(jobOpportunityId);
+            await _jobOpportunityRepository.DeleteJobOpportunityAsync(job);
+            return job.Id;
+        }
     }
 }
