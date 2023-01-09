@@ -31,5 +31,11 @@ namespace Otzzei.MetchJob.Application.Controllers
             var response = await _jobOpportunityService.GetJobOpportunityAsync(jobOpportunityId);
             return Ok(response);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllJobOpportunitiesAsync()
+        {
+            var response = await _jobOpportunityService.GetAllJobOpportunities();
+            return Ok(response);
+        }
     }
 }

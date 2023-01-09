@@ -26,7 +26,11 @@ namespace Otzzei.MetchJob.Domain.Services
             var jobResponse = new JobOpportunityResponse(job);
             return jobResponse;
         }
-
+        public async Task<List<JobOpportunityResponse>> GetAllJobOpportunitiesAsync()
+        {
+            var jobs = await _jobOpportunityRepository.GetAllJobOpportunitiesAsync();
+            return jobs.Select(x => new JobOpportunityResponse(x)).ToList();
+        }
         public async Task<Guid> UpdateJobOpportunityAsync(Guid jobOpportunituId, JobOpportunityRequest request)
         {
             var job = await _jobOpportunityRepository.GetJobOpportunityAsync(jobOpportunituId);
