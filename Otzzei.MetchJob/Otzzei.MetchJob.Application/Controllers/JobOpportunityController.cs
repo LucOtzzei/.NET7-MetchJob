@@ -43,5 +43,17 @@ namespace Otzzei.MetchJob.Application.Controllers
             var response = await _jobOpportunityService.DeleteJobOpportunityAsync(jobOpportunityId);
             return Ok(response);
         }
+        [HttpPatch("{jobOpportunityId}")]
+        public async Task<IActionResult> MarkCacancyAsFilledAsync([FromRoute] Guid jobOpportunityId)
+        {
+            var response = await _jobOpportunityService.MarkCacancyAsFilledAsync(jobOpportunityId);
+            return Ok(response);
+        }
+        [HttpPatch("{jobOpportunityId}")]
+        public async Task<IActionResult> MarkCacancyAsOpenAsync([FromRoute] Guid jobOpportunityId)
+        {
+            var response = await _jobOpportunityService.MarkCacancyAsOpenAsync(jobOpportunityId);
+            return Ok(response);
+        }
     }
 }

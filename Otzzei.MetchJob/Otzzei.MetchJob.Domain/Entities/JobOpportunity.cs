@@ -16,6 +16,7 @@ namespace Otzzei.MetchJob.Domain.Entities
             MaximumWageAtWork = request.MaximumWageAtWork;
             JobsDescription = request.JobsDescription;
             JobActivities = request.JobActivities;
+            VacanciesFilled = false;
         }
         public Guid Id { get; set; }
         public Guid ManagerJobId { get; set; }
@@ -26,6 +27,7 @@ namespace Otzzei.MetchJob.Domain.Entities
         public double MaximumWageAtWork { get; set; }
         public string JobsDescription { get; set; }
         public string JobActivities { get; set; }
+        public bool VacanciesFilled { get; set; }
 
         public void Update(JobOpportunityRequest request)
         {
@@ -37,5 +39,7 @@ namespace Otzzei.MetchJob.Domain.Entities
             JobsDescription = request.JobsDescription;
             JobActivities = request.JobActivities;
         }
+        public void MarkCacancyAsFilled() => VacanciesFilled = true;
+        public void MarkCacancyAsOpen() => VacanciesFilled = false;
     }
 }

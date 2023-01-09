@@ -30,14 +30,9 @@ namespace Otzzei.MetchJob.Infrastructure.Repositories
             return await _context.JobOpportunities.ToListAsync();
         }
 
-        public async Task<JobOpportunity> GetJobOpportunityAsync(Guid? jobOpportunityId)
+        public async Task<JobOpportunity> GetJobOpportunityAsync(Guid jobOpportunityId)
         {
             return await _context.JobOpportunities.FirstOrDefaultAsync(x => x.Id == jobOpportunityId);
-        }
-
-        public Task<JobOpportunity> GetJobOpportunityAsync(Guid jobOpportunityId)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task UpdateJobOpportunityAsync(JobOpportunity job)
