@@ -1,6 +1,6 @@
 ﻿using Otzzei.MetchJob.Domain.Entities;
 
-namespace Otzzei.MetchJob.Domain
+namespace Otzzei.MetchJob.Domain.Responses
 {
     public class JobOpportunityResponse
     {

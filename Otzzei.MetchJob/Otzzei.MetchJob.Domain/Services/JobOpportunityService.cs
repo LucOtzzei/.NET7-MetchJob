@@ -2,6 +2,7 @@
 using Otzzei.MetchJob.Domain.Interfaces.IRepository;
 using Otzzei.MetchJob.Domain.Interfaces.IService;
 using Otzzei.MetchJob.Domain.Requests;
+using Otzzei.MetchJob.Domain.Responses;
 
 namespace Otzzei.MetchJob.Domain.Services
 {

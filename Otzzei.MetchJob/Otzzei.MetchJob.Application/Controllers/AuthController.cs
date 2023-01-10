@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Otzzei.MetchJob.Domain.Requests;
 
 namespace Otzzei.MetchJob.Application.Controllers
 {
