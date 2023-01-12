@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Otzzei.MetchJob.Domain.Interfaces.IService;
 using Otzzei.MetchJob.Domain.Requests;
 
 namespace Otzzei.MetchJob.Application.Controllers
@@ -20,15 +21,21 @@ namespace Otzzei.MetchJob.Application.Controllers
             return Ok(response);
         }
         [HttpGet("request-password-recovery")]
-        public async Task<IActionResult> RequestPasswordRecoveryAsync(PasswordRecoveryRequest request)
+        public async Task<IActionResult> RequestPasswordRecoveryAsync(RecoveryPasswordRequest request)
         {
-            var response = await _loginService.RequestPasswordRecoveryAsync(request);
+            var response = await _loginService.PasswordRecoveryRequestAsync(request);
             return Ok(response);
         }
-        [HttpGet("change-password")]
-        public async Task<IActionResult> RecoverPasswordAsync(ChangePasswordRequest request)
+        [HttpPost("recover-password")]
+        public async Task<IActionResult> RecoverPasswordAsync(RecoverPasswordRequest request)
         {
             var response = await _loginService.RecoverPasswordAsync(request);
+            return Ok(response);
+        }
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePasswordAsync(ChangePasswordRequest request)
+        {
+            var response = await _loginService.ChangePasswordAsync(request);
             return Ok(response);
         }
     }

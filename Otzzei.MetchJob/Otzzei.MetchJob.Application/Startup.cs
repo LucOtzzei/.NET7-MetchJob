@@ -33,6 +33,8 @@ namespace Otzzei.MetchJob.Application
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
 
+            services.AddScoped<IAuthService, AuthService>();
+
             services.AddScoped<IJobOpportunityRepository, JobOpportunityRepository>();
             services.AddScoped<IJobOpportunityService, JobOpportunityService>();
             services.AddMvc(options =>
