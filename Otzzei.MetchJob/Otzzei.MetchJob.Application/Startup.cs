@@ -37,6 +37,10 @@ namespace Otzzei.MetchJob.Application
 
             services.AddScoped<IJobOpportunityRepository, JobOpportunityRepository>();
             services.AddScoped<IJobOpportunityService, JobOpportunityService>();
+
+            services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IProfileService, ProfileService>();
+
             services.AddMvc(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;

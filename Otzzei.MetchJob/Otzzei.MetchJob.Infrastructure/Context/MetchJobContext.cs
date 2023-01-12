@@ -11,5 +11,6 @@ namespace Otzzei.MetchJob.Infrastructure.Context
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<JobOpportunity> JobOpportunities { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
     }
 }
