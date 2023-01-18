@@ -7,6 +7,7 @@ namespace Otzzei.MetchJob.Infrastructure.Context
 {
     public class MetchJobContext : IdentityDbContext<IdentityUser<Guid>, IdentityRole<Guid>, Guid>
     {
+        public MetchJobContext() { }
         public MetchJobContext(DbContextOptions<MetchJobContext> opts) : base(opts) { }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
